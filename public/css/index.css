@@ -1,0 +1,415 @@
+body{
+	width:100%;
+	overflow:hidden;
+	background-color: #7EDEC4 !important;
+}
+
+.hide{ display:none;}
+
+.page{
+	width:100%;
+	height:100%;
+	position:absolute;
+	/*font-size:100px;*/
+	text-align:center;
+}
+
+.page-1-1{ background-color:#FFF0A9;} /*浅黄色*/
+.page-2-1{ background-color:#63D7E0;} /*天蓝色*/
+.page-3-1{ background-color:#FFDCDC;} /*粉红色*/
+.page-4-1{ background-color:#A9E0CB;} /*浅绿色*/
+.page-5-1{ background-color:#7EDEC4;} /*点歌页面*/
+
+.page-current{
+	z-index:1;
+}
+
+@media screen and (min-width:350px){
+	.wrap{
+		height:500px;
+	}
+
+	.page-1-1 .img_2 { /*播放按钮周边波纹*/
+		height:auto;width:310px;
+		position:absolute;
+		left:50%;
+		top:10%;
+		margin-left:-155px;
+	}
+	.page-1-1 .img_3 { /*文字*/
+		height:auto;width:190px;
+		position:absolute;
+		left:50%;
+		top:75%;
+		margin-left:-95px;
+	}
+	.page-1-1 .img_4 { /*上滑按钮*/
+		height:auto;width:42px;
+		position:absolute;
+		left:50%;
+		top:85%;
+		margin-left:-21px;
+	}
+	.page-2-1 .img_1 { /*波形外框*/
+		height:auto;width:295px;
+		position:absolute;
+		left:50%;
+		top:20%;
+		margin-left:-147px;
+	}
+	.page-2-1 .img_2 { /*波形*/
+		height:auto;width:295px;
+		position:absolute;
+		left:50%;
+		top:28%;
+		margin-left:-147px;
+	}
+	.page-2-1 .img_3 { /*波形*/
+		height:auto;width:280px;
+		position:absolute;
+		left:48%;
+		top:28.5%;
+		margin-left:-140px;
+	}
+	.page-2-1 .img_4 { /*波形*/
+		height:auto;width:280px;
+		position:absolute;
+		left:53%;
+		top:29%;
+		margin-left:-140px;
+	}
+	.page-2-1 .img_5 { /*文字*/
+		height:auto;width:215px;
+		position:absolute;
+		left:50%;
+		top:70%;
+		margin-left:-107px;
+	}
+	.page-2-1 .img_6 { /*上滑按钮*/
+		height:auto;width:42px;
+		position:absolute;
+		left:50%;
+		top:85%;
+		margin-left:-21px;
+	}
+	.page-3-1 .img_1 { /*心形*/
+		height:auto;width:198px;
+		position:absolute;
+		left:50%;
+		top:20%;
+		margin-left:-99px;
+	}
+	.page-3-1 .img_2 { /*文字*/
+		height:auto;width:200px;
+		position:absolute;
+		left:50%;
+		top:70%;
+		margin-left:-100px;
+	}
+	.page-3-1 .img_3 { /*上滑按钮*/
+		height:auto;width:42px;
+		position:absolute;
+		left:50%;
+		top:85%;
+		margin-left:-21px;
+	}
+	.page-4-1 .img_1 { /*底*/
+		height:auto;width:175px;
+		position:absolute;
+		left:50%;
+		top:7%;
+		margin-left:-87px;
+	}
+	.page-4-1 .img_2 { /*文字1*/
+		height:auto;width:40px;
+		position:absolute;
+		left:50%;
+		top:27%;
+		margin-left:-20px;
+	}
+	.page-4-1 .img_3 { /*文字2*/
+		height:auto;width:120px;
+		position:absolute;
+		left:50%;
+		top:12%;
+		margin-left:-60px;
+	}
+	.page-4-1 .img_4 { /*上滑按钮*/
+		height:auto;width:42px;
+		position:absolute;
+		left:50%;
+		top:85%;
+		margin-left:-21px;
+	}
+	.page-5-1 .img_2 { /*页脚*/
+		height:auto;
+		width:66%;
+		/*position:absolute;*/
+		/*left:17%;*/
+		/*top:92%;*/
+		/*margin-right: 17%;*/
+		position:relative;
+		margin-top: 8%;
+	}
+
+
+	/*表单部分*/
+	.box-left
+	{
+		text-align:center;
+		background-color:#FFF5CC;
+		margin-left:8%;
+		height:37px;
+		border-radius:10px 0px 0px 10px;
+	}
+	.box-left label
+	{
+		margin-top:8px;
+		color: #A9E0CB;
+	}
+	.box-right
+	{
+		float:left;
+	}
+	.box-right p
+	{
+		text-align:center;
+		padding:4px;
+		background-color:white;
+		height:37px;
+	}
+	.box-right input
+	{
+		border-radius:0px 10px 10px 0px;
+	}
+	.box-right select
+	{
+		border-radius:0px 10px 10px 0px;
+	}
+	#submit{
+		height:auto;width:32%;
+		/*position:absolute;*/
+		/*left:50%;*/
+		/*top:85%;*/
+		/*margin-left:-57px;*/
+		/*margin-top: 20px;*/
+		position:relative;
+		margin-top: 8%;
+	}
+
+	/*用户图片*/
+	#userInfo{
+		margin-bottom:30px;
+		margin-top:20px;
+	}
+
+	#userName{
+		margin-top: 20px;
+		color: #FFFFFF;
+	}
+
+	#headImg{
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		-ms-border-radius: 50%;
+		-o-border-radius: 50%;
+		border-radius: 50%;
+		border-color: #FFF;
+	}
+}
+
+
+
+@media screen and (max-width:349px){
+	.wrap{
+		height:420px;
+	}
+	.page-1-1 .img_2 { /*播放按钮周边波纹*/
+		height:auto;width:275px;
+		position:absolute;
+		left:50%;
+		top:5%;
+		margin-left:-137px;
+	}
+	.page-1-1 .img_3 { /*文字*/
+		height:auto;width:190px;
+		position:absolute;
+		left:50%;
+		top:75%;
+		margin-left:-95px;
+	}
+	.page-1-1 .img_4 { /*上滑按钮*/
+		height:auto;width:42px;
+		position:absolute;
+		left:50%;
+		top:85%;
+		margin-left:-21px;
+	}
+	.page-2-1 .img_1 { /*波形外框*/
+		height:auto;width:295px;
+		position:absolute;
+		left:50%;
+		top:15%;
+		margin-left:-147px;
+	}
+	.page-2-1 .img_2 { /*波形*/
+		height:auto;width:295px;
+		position:absolute;
+		left:50%;
+		top:23%;
+		margin-left:-147px;
+	}
+	.page-2-1 .img_3 { /*波形*/
+		height:auto;width:280px;
+		position:absolute;
+		left:48%;
+		top:23.5%;
+		margin-left:-140px;
+	}
+	.page-2-1 .img_4 { /*波形*/
+		height:auto;width:280px;
+		position:absolute;
+		left:53%;
+		top:24%;
+		margin-left:-140px;
+	}
+	.page-2-1 .img_5 { /*文字*/
+		height:auto;width:215px;
+		position:absolute;
+		left:50%;
+		top:70%;
+		margin-left:-107px;
+	}
+	.page-2-1 .img_6 { /*上滑按钮*/
+		height:auto;width:42px;
+		position:absolute;
+		left:50%;
+		top:85%;
+		margin-left:-21px;
+	}
+	.page-3-1 .img_1 { /*心形*/
+		height:auto;width:198px;
+		position:absolute;
+		left:50%;
+		top:15%;
+		margin-left:-99px;
+	}
+	.page-3-1 .img_2 { /*文字*/
+		height:auto;width:200px;
+		position:absolute;
+		left:50%;
+		top:67%;
+		margin-left:-100px;
+	}
+	.page-3-1 .img_3 { /*上滑按钮*/
+		height:auto;width:42px;
+		position:absolute;
+		left:50%;
+		top:85%;
+		margin-left:-21px;
+	}
+	.page-4-1 .img_1 { /*底*/
+		height:auto;width:130px;
+		position:absolute;
+		left:50%;
+		top:7%;
+		margin-left:-65px;
+	}
+	.page-4-1 .img_2 { /*文字1*/
+		height:auto;width:35px;
+		position:absolute;
+		left:50%;
+		top:27%;
+		margin-left:-17px;
+	}
+	.page-4-1 .img_3 { /*文字2*/
+		height:auto;width:105px;
+		position:absolute;
+		left:50%;
+		top:12%;
+		margin-left:-52px;
+	}
+	.page-4-1 .img_4 { /*上滑按钮*/
+		height:auto;width:42px;
+		position:absolute;
+		left:50%;
+		top:85%;
+		margin-left:-21px;
+	}
+	.page-5-1 .img_2 { /*页脚*/
+		height:auto;
+		width:66%;
+		/*position:absolute;*/
+		/*left:17%;*/
+		/*top:92%;*/
+		/*margin-right: 17%;*/
+		position:relative;
+		margin-top: 8%;
+	}
+
+
+	/*表单部分*/
+	.box-left
+	{
+		text-align:center;
+		background-color:#FFF5CC;
+		margin-left:8%;
+		height:37px;
+		border-radius:10px 0px 0px 10px;
+	}
+	.box-left label
+	{
+		margin-top:8px;
+		color: #A9E0CB;
+	}
+	.box-right
+	{
+		float:left;
+	}
+	.box-right p
+	{
+		text-align:center;
+		padding:4px;
+		background-color:white;
+		height:37px;
+	}
+	.box-right input
+	{
+		border-radius:0px 10px 10px 0px;
+	}
+	.box-right select
+	{
+		border-radius:0px 10px 10px 0px;
+	}
+	#submit{
+		height:auto;width:32%;
+		/*position:absolute;*/
+		/*left:50%;*/
+		/*top:85%;*/
+		/*margin-left:-57px;*/
+		/*margin-top: 20px;*/
+		position:relative;
+		margin-top: 8%;
+	}
+
+	/*用户图片*/
+	#userInfo{
+		margin-bottom:5px;
+		margin-top:10px;
+	}
+
+	#userName{
+		margin-top: 5px;
+		color: #FFFFFF;
+	}
+
+	#headImg{
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		-ms-border-radius: 50%;
+		-o-border-radius: 50%;
+		border-radius: 50%;
+		border-color: #FFF;
+	}
+
+}
