@@ -2,6 +2,7 @@ body{
 	width:100%;
 	overflow:hidden;
 	text-align:center;
+	background-color:#62CCBF !important;
 }
 
 .hide{ display:none;}
@@ -14,39 +15,85 @@ body{
 	text-align:center;
 }
 
-.page-1-1{ background-color:#B3B3B3;}
+.page-1-1{ background-color:#62CCBF;}
 
 
-.title { /*标题*/
-	height:auto;width:140px;
-	position:absolute;
-	left:50%;
-	top:7%;
-	margin-left:-70px;
-}
 .footer { /*页脚*/
-	height:auto;width:240px;
+	height:auto;
+	width:85%;
+	left:9%;
+	top:92%;
 	position:absolute;
-	left:50%;
-	top:90%;
-	margin-left:-120px;
+	margin-right:11%;
 }
-.songlist{ 
+.songlist{ /*div*/
 	position:absolute;
-	height:65%;
-	width:80%;
-	left:10%;
-	top:18%;
-	margin-right: 10%;
-	background: #CBCBCB;
-	border-radius: 20px;
+	height:84%;
+	width:100%;
+	left:0%;
+	top:3%;
+	margin-right: 0%;
 	text-align:center;
-	padding-top: 5px;
-	padding-bottom: 5px;
 }
 .songimg{
 	height: 100%;
 	/*display: block;*/
 	overflow: hidden;
-	border-radius: 20px;
+	/*border-radius: 20px;*/
+}
+.loadingImg{
+	/*vertical-align: middle;*/
+	position: absolute;
+	top: 40%;
+	left: 40%;
+	height: auto;
+	width: 20%;
+	padding-right: 40%;
+}
+
+.headimglist{ /*div*/
+	position:absolute;
+	height:84%;
+	width:23%;
+	left:0%;
+	top:3%;
+	margin-right: 77%;
+	overflow: hidden;
+	text-align: right !important;
+}
+.headimglist table{
+	vertical-align: middle;
+	height: 101%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	float: right;
+}
+.headimglist table tr{
+	height: 14%;
+}
+.headimglist img{
+	vertical-align: middle;
+	border-radius: 10px;
+	height: 50%;
+}
+
+.pageControl{
+	position:absolute;
+	width:80%;
+	left:10%;
+	top:87%;
+	margin-right: 10%;
+	text-align:center;
+	vertical-align: middle;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.pageControl span{
+	vertical-align: middle;
+	color: #FFF;
+}
+
+.pageControlImg{
+	width: 15%;
 }

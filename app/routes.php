@@ -43,5 +43,5 @@ Route::get('healing2014/admin/export' , 'AdminController@export');
 
 
 // 生成歌单PNG
-Route::get('healing2014/gen/songlist/{pageId}' , 'SonglistController@createSonglistPNG');
+Route::get('healing2014/gen/songlist/{pageId}' , 'SonglistController@createSonglistPNG_v2');
 Route::get('healing2014/gen/json/{pageId}' , 'SonglistController@getSongJSON');

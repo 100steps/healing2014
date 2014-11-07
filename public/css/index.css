@@ -143,13 +143,13 @@ body{
 	}
 	.page-5-1 .img_2 { /*页脚*/
 		height:auto;
-		width:66%;
+		width:85%;
 		/*position:absolute;*/
 		/*left:17%;*/
 		/*top:92%;*/
 		/*margin-right: 17%;*/
 		position:relative;
-		margin-top: 8%;
+		margin-top: 10%;
 	}
 
 
@@ -194,7 +194,7 @@ body{
 		/*margin-left:-57px;*/
 		/*margin-top: 20px;*/
 		position:relative;
-		margin-top: 8%;
+		margin-top: 6%;
 	}
 
 	/*用户图片*/
@@ -338,13 +338,13 @@ body{
 	}
 	.page-5-1 .img_2 { /*页脚*/
 		height:auto;
-		width:66%;
+		width:85%;
 		/*position:absolute;*/
 		/*left:17%;*/
 		/*top:92%;*/
 		/*margin-right: 17%;*/
 		position:relative;
-		margin-top: 8%;
+		margin-top: 5%;
 	}
 
 
@@ -389,7 +389,7 @@ body{
 		/*margin-left:-57px;*/
 		/*margin-top: 20px;*/
 		position:relative;
-		margin-top: 8%;
+		margin-top: 5%;
 	}
 
 	/*用户图片*/

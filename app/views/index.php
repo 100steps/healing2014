@@ -49,7 +49,14 @@
 			<div class="page page-5-1 hide">
 				<div class="wrap">
 <?php
-	if(isset($userInfo)){
+	if(isset($userInfo)&&isset($system)&&$system=='MIUI'){ //该死的MIUI
+?>
+					<div id="userInfo">
+						<img id="headImg" src="<?php echo $userInfo->headimgurl; ?>" width="87px" height="87px"/><br/>
+						<p id="userName"><?php echo ($userInfo->nickname_html); ?></p>
+					</div>
+<?php
+	}elseif(isset($userInfo)){
 ?>
 					<div id="userInfo">
 						<img id="headImg" src="<?php echo $userInfo->headimgurl; ?>" width="87px" height="87px" border="3"/><br/>
@@ -105,11 +112,13 @@
 								<label for="school">学校</label>
 							</span>
 							<span class="columns small-8 end box-right"  style="">
-								<select name="school"  id="schoolselect" required="required">
+								<select name="school"  id="schoolselect" required="required" disabled>
 									<option value="null">请选择……</option>
 									<option value="1" selected>华南理工大学</option>
 									<option value="2">华南师范大学</option>
 									<option value="3">华南农业大学</option>
+									<option value="4">广东外语外贸大学</option>
+									<option value="5">其他</option>
 								</select>
 							</span>
 						</div>
@@ -119,7 +128,7 @@
 						</div>
 
 						<div class="row collapse">
-							<img class="img_2" src="http://wechat.100steps.net/img/footer.png" />
+							<img class="img_2" src="http://wechat.100steps.net/img/footer2.png" />
 						</div>
 					</form>
 				</div>

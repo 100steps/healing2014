@@ -19,6 +19,7 @@ body{
 }
 
 .page-1-1{ background-color:#7EDEC4;}
+.page-2-1{ background-color:#7EDEC4;}
 
 .page-current{
 	z-index:1;
@@ -46,10 +47,54 @@ body{
 	top:60%;
 	margin-left:-108px;
 }
-.page-1-1 .img_4 { /*页脚*/
-	height:auto;width:160px;
-	position:absolute;
-	left:50%;
-	top:90%;
-	margin-left:-80px;
+
+
+
+
+
+@media screen and (min-width:330px){
+	.page-1-1 .img_4 { /*页脚*/
+		height:auto;width:160px;
+		position:absolute;
+		left:50%;
+		top:90%;
+		margin-left:-80px;
+	}
+	.page-1-2 .img_1 { /*icon*/
+		height:auto;width:40%;
+		position:absolute;
+		left:30%;
+		top:13%;
+		margin-right:30%;
+	}
+	.page-1-2 .img_2 { /*intro*/
+		height:auto;width:72%;
+		position:absolute;
+		left:14%;
+		top:60%;
+		margin-right:14%;
+	}
+}
+@media screen and (max-width:329px){
+	.page-1-1 .img_4 { /*页脚*/
+		height:auto;width:160px;
+		position:absolute;
+		left:50%;
+		top:80%;
+		margin-left:-80px;
+	}
+	.page-1-2 .img_1 { /*icon*/
+		height:auto;width:38%;
+		position:absolute;
+		left:31%;
+		top:8%;
+		margin-right:31%;
+	}
+	.page-1-2 .img_2 { /*intro*/
+		height:auto;width:72%;
+		position:absolute;
+		left:14%;
+		top:60%;
+		margin-right:14%;
+	}
 }
