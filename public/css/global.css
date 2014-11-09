@@ -1,0 +1,29 @@
+body{
+	margin: 0px;
+	font-family: 微软雅黑;
+	color: white;
+	overflow-x:hidden;
+	overflow-y:hidden;
+}
+#bg{
+	margin: 0px;
+	padding: 0px;
+}
+.button{
+	cursor: pointer;
+}
+@media screen and (min-width: 520px) and (max-width: 768px) {
+    body {
+        font-size: 22px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    body {
+        font-size: 30px;
+    }
+}
+@media screen and (min-width: 992px) {
+    body {
+        font-size: 35px;
+    }
+}

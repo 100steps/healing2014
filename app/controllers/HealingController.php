@@ -42,11 +42,17 @@ class HealingController extends BaseController {
 	}
 
 	public function index(){
+		// if(time()<1415453400){
+		// 	header("Content-type: text/html; charset=utf-8");
+		// 	echo '<h1>治愈系活动于11月8号21点30分开始,敬请留意~</h1>';
+		// 	exit;
+		// }
+
 		if(Session::has('userInfo')){
 			if(preg_match("/534.30/",$_SERVER["HTTP_USER_AGENT"])){ //miui独立拉出来设置CSS
 				return View::make('index')->with('userInfo', Session::get('userInfo'))->with('system','MIUI');
 			}elseif(preg_match("/MSIE/",$_SERVER["HTTP_USER_AGENT"])){ //该死的IE,WP不要治愈了好嘛?
-				// return View::make('index_wp');
+				return View::make('index_wp')->with('userInfo', Session::get('userInfo'));
 			}else{ //正常
 				return View::make('index')->with('userInfo', Session::get('userInfo'));
 			}	

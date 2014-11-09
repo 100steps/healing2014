@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>治愈系歌单v2</title>
+		<title>BBT治愈系-歌单</title>
 		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 		<!-- <link rel="stylesheet" href="/css/jquery.mobile-1.4.5.min.css" /> -->
 		<link rel="stylesheet" type="text/css" href="/css/reset.css?ver=2" />
@@ -32,6 +32,7 @@
 					<img id="prev" class="pageControlImg" src="/img/songlist_prev.png" />
 					<span id="pagenum">1</span><span> of <?php echo $list_count; ?></span>
 					<img id="next" class="pageControlImg" src="/img/songlist_next.png" />
+					<img id="random" class="pageControlImg" src="/img/songlist_rand.png" />
 				</div>
 				<img class="footer" src="http://wechat.100steps.net/img/footer2.png" />
 			</div>	

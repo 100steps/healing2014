@@ -1,5 +1,4 @@
 (function(){
-	// alert('页面宽度:' + document.body.clientWidth + "\n页面高度:"  + document.body.clientHeight);
 
 	var now         = { row:1, col:1 }, last = { row:0, col:0};
 	const towards   = { up:1, right:2, down:3, left:4};
@@ -7,13 +6,12 @@
 	var pageCount   = 5;
 	var submitted   = false;
 
-	var imgUrl      = 'http://wechat.100steps.net/img/fire.png';
+	var imgUrl      = 'http://wechat.100steps.net/img/fire.png?ver=2';
 	var lineLink    = 'http://wechat.100steps.net/healing2014';
 	var descContent = '';
-	var shareTitle  = '治愈系2014';
 	var appid       = '';
-	var shareTitle  = 'BBT治愈系';
-	var momentTitle = 'BBT治愈系';
+	var shareTitle  = '治愈系音乐盛宴,要你好听!';
+	var momentTitle = '治愈系音乐盛宴,要你好听!';
 
 	s=window.innerHeight/500;
 	ss=250*(1-s);
@@ -85,6 +83,16 @@
 		}
 		if(school=='null'){
 			alert("请选择学校~");
+			submitted = false;
+			return;
+		}
+		if(parseInt(school)!=1 && tel.length<11 ){
+			alert("非华工的同学你好,请输入11位长号哦~");
+			submitted = false;
+			return;
+		}
+		if(tel.length<3 ){
+			alert("亲,你的手机号怎么那么短呢?");
 			submitted = false;
 			return;
 		}

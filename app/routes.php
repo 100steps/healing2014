@@ -27,9 +27,13 @@ Route::get('healing2014/success', 'HealingController@success');
 // 歌单列表
 Route::get('healing2014/list' , 'SonglistController@showSonglist');
 // 投票
-Route::get('healing2014/vote' , 'HealingController@vote');
-// 治愈成功
+Route::get('healing2014/vote' , 'VoteController@showList');
+// 广告
 Route::get('healing2014/22bookshop', 'HealingController@show22bookshop');
+// 社区
+Route::get('healing2014/wsq' , function(){
+	echo '<h1>活动即将开始,敬请期待~</h1>';
+});
 
 
 // 后台编辑界面
@@ -45,3 +49,12 @@ Route::get('healing2014/admin/export' , 'AdminController@export');
 // 生成歌单PNG
 Route::get('healing2014/gen/songlist/{pageId}' , 'SonglistController@createSonglistPNG_v2');
 Route::get('healing2014/gen/json/{pageId}' , 'SonglistController@getSongJSON');
+Route::get('healing2014/gen/favourite' , 'SonglistController@getFavouriteSongJSON');
+
+
+
+
+// 歌单列表
+Route::get('healing2014/test/list' , 'SonglistController@showSonglist_test');
+Route::get('healing2014/test/vote' , 'VoteController@showList_test');
+Route::get('healing2014/test/vote/detail/{id}' , 'VoteController@showDetailPage');

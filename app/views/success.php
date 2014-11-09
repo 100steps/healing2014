@@ -16,6 +16,7 @@
 					<img class="img_1 pt-page-scaleUp" src="http://wechat.100steps.net/img/success_img1.png?ver=4" />
 					<img class="img_2 pt-page-scaleUp" src="http://wechat.100steps.net/img/success_img2.png?ver=4" />
 					<img class="img_3 pt-page-scaleUp" src="http://wechat.100steps.net/img/success_img3.png?ver=4" />
+					<img class="img_5 pt-page-scaleUp" src="http://wechat.100steps.net/img/success_img5.png?ver=4" onclick="window.location='http://mp.weixin.qq.com/s?__biz=MjM5MTI3NzQ4MQ==&mid=203367569&idx=1&sn=ba2d7d60ffeeeb80bca0eb43039a176c'" />
 					<img class="img_4" src="http://wechat.100steps.net/img/success_img4.png?ver=4" />
 				</div>
 			</div>

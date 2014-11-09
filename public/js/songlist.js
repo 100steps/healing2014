@@ -1,4 +1,5 @@
 $(document).on("pageinit","#pageone",function(){
+	// alert('页面宽度:' + document.body.clientWidth + "\n页面高度:"  + document.body.clientHeight);
 
 	var current_page = $(".songlist").attr("currentcount");
 	loadSonglistHeadimgJSON(current_page);
@@ -29,6 +30,17 @@ $(document).on("pageinit","#pageone",function(){
 		}
 	});
 
+	$("#random").on("tap",function(){
+		var max = parseInt($(".songlist").attr("listcount"))-1;
+		var min = 1;
+		var cnt = max-min+1;  
+    	var rnd = Math.floor(Math.random() * cnt + min);
+
+		loadSongImg(rnd);
+		loadSonglistHeadimgJSON(rnd);
+	});
+
+
 	function loadSonglistHeadimgJSON(id){
 		var src = 'http://wechat.100steps.net/healing2014/gen/json/' + id;
 		$.getJSON(src, function(json){
@@ -55,10 +67,15 @@ $(document).on("pageinit","#pageone",function(){
 		};
 
 		$('.songlist').html('<img src="/img/loading0.gif" class="loadingImg"/>');
+
 		img.onload = function(){
 			// 需要执行的程序
 			$('.songlist').html(''); 
 			document.getElementById('songlist').appendChild(img);
+
+			// 该死的IE
+			$(".songimg").height('100%');
+			$(".songimg").width("auto");
 		}
 	}
 });

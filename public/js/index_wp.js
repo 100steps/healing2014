@@ -1,17 +1,19 @@
-var imgUrl      = 'http://wechat.100steps.net/img/fire.png';
+var imgUrl      = 'http://wechat.100steps.net/img/fire.png?ver=2';
 var lineLink    = 'http://wechat.100steps.net/healing2014';
 var descContent = '';
 var shareTitle  = '治愈系2014';
 var appid       = '';
 var shareTitle  = 'BBT治愈系';
 var momentTitle = 'BBT治愈系';
+var submitted   = false;
 
 s=window.innerHeight/500;
 ss=250*(1-s);
-
 $('.wrap').css('-webkit-transform','scale('+s+','+s+') translate(0px,-'+ss+'px)');
 
-$("#submit").("click",function(){
+
+function submitHealing(){
+
 	if(submitted)
 		return;
 	else
@@ -48,6 +50,16 @@ $("#submit").("click",function(){
 		submitted = false;
 		return;
 	}
+	if(parseInt(school)!=1 && tel.length<11 ){
+		alert("非华工的同学你好,请输入11位长号哦~");
+		submitted = false;
+		return;
+	}
+	if(tel.length<3 ){
+		alert("亲,你的手机号怎么那么短呢?");
+		submitted = false;
+		return;
+	}
 
 
 	shareTitle = name + '在治愈系点歌啦!';
@@ -65,7 +77,7 @@ $("#submit").("click",function(){
 			sex: sex ,
 			school: school
 		},
-		dataType: 'json',
+		// dataType: 'json',
 		contentType: 'application/json',
 		success: function(data){
 			// alert('点歌成功!分享到朋友圈');
@@ -77,7 +89,8 @@ $("#submit").("click",function(){
 			submitted = false;
 		}
 	})
-});
+}
+
 
 
 function shareFriend() {

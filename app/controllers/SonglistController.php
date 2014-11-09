@@ -6,9 +6,12 @@ class SonglistController extends BaseController {
 		$song_count = DB::table('songlist')->where('song', '!=', '')->count();
 		$list_count = ceil($song_count/7);
 		return View::make('songlist')->with('list_count',$list_count);
-		// 
-		// 
-		// return View::make('songlist_new')->with('list_count',$list_count);
+	}
+
+	public function showSonglist_test(){		
+		$song_count = DB::table('songlist')->where('song', '!=', '')->count();
+		$list_count = ceil($song_count/7);
+		return View::make('songlist_test')->with('list_count',$list_count);
 	}
 
 	public function createSonglistPNG($pageId){
@@ -130,8 +133,8 @@ class SonglistController extends BaseController {
 
 			//draw school
 			if($songlist[$i]->school==0){ //未知
-				imagettftext($background, $font_size_school , $font_angle , $font_song_leftborder +$ID_length +35 , 32 + $line_height*$i , 
-					$text_color2, $font_file , "来自星星");
+				// imagettftext($background, $font_size_school , $font_angle , $font_song_leftborder +$ID_length +35 , 32 + $line_height*$i , 
+				// 	$text_color2, $font_file , "来自星星");
 			}elseif($songlist[$i]->school==1){ //华工
 				imagettftext($background, $font_size_school , $font_angle , $font_song_leftborder +$ID_length +35 , 32 + $line_height*$i , 
 					$text_color2, $font_file , "来自华工");
@@ -183,9 +186,15 @@ class SonglistController extends BaseController {
 		exit();
 	}
 
+	public function getFavouriteSongJSON(){
+		$favourite = DB::table('songlist')->groupBy('status')->orderBy('name', 'desc');
+		header('Content-type: application/json;charset=utf-8');
+		echo json_encode($favourite,JSON_UNESCAPED_UNICODE);
+		exit();
+	}
 
 	private function getSonglist( $start = 0 ,$count = 7 ){
-		return DB::table('songlist')->skip($start)->take($count)->where('song', '!=', '')->get();
+		return DB::table('songlist')->skip($start)->take($count)->where('song', '!=', '')->orderBy('created_at', 'desc')->get();
 	}
 
 

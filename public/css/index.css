@@ -143,13 +143,12 @@ body{
 	}
 	.page-5-1 .img_2 { /*页脚*/
 		height:auto;
-		width:85%;
-		/*position:absolute;*/
-		/*left:17%;*/
-		/*top:92%;*/
+		width:100%;
+		position:absolute;
+		left:0%;
+		bottom:0%;
 		/*margin-right: 17%;*/
-		position:relative;
-		margin-top: 10%;
+		/*position:relative;*/
 	}
 
 
@@ -337,14 +336,15 @@ body{
 		margin-left:-21px;
 	}
 	.page-5-1 .img_2 { /*页脚*/
+		/*height:auto;
+		width:100%;
+		position:absolute;
+		left:0%;
+		bottom:0%;*/
 		height:auto;
-		width:85%;
-		/*position:absolute;*/
-		/*left:17%;*/
-		/*top:92%;*/
-		/*margin-right: 17%;*/
+		width:100%;
 		position:relative;
-		margin-top: 5%;
+		margin-top: 12%;
 	}
 
 

@@ -21,11 +21,11 @@
 	var pageCount   = 1;
 	var submitted   = false;
 
-	var imgUrl             = 'http://wechat.100steps.net/img/fire.png';
+	var imgUrl             = 'http://wechat.100steps.net/img/fire.png?ver=2';
 	var lineLink           = 'http://wechat.100steps.net/healing2014'; //这个是分享的网址
 	var descContent        = '';
-	var shareTimelineTitle = 'BBT治愈系';
-	var shareFriendTitle   = 'BBT治愈系';
+	var shareTimelineTitle = '治愈系音乐盛宴,要你好听!';
+	var shareFriendTitle   = '治愈系音乐盛宴,要你好听!';
 	var appid              = '';  //这里写开发者接口里的appid
 
 	s=window.innerHeight/500;

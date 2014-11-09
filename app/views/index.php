@@ -80,7 +80,9 @@
 								<label for="name" >歌曲</label>
 							</span>
 							<span class="columns small-8 end box-right" style="">
-								<input type="text" required="required" name="song" id="songVal" placeholder="XXX"/>
+								<input type="text" required="required" name="song" id="songVal" placeholder="XXX" 
+								onfocus="javascript:document.getElementById('footer').style.display='none';" 
+								onblur="javascript:document.getElementById('footer').style.display='block';"  />
 							</span>
 						</div>
 
@@ -89,7 +91,9 @@
 								<label for="name" >手机号</label>
 							</span>
 							<span class="columns small-8 end box-right" style="">
-								<input type="number" required="required" name="tel" id="telVal" placeholder="长号或短号" />
+								<input type="number" required="required" name="tel" id="telVal" placeholder="长号或短号" 
+								onfocus="javascript:document.getElementById('footer').style.display='none';" 
+								onblur="javascript:document.getElementById('footer').style.display='block';" />
 							</span>
 						</div>
 
@@ -127,8 +131,8 @@
 							<img id="submit" src="http://wechat.100steps.net/img/page5_img1.png?ver=2" />
 						</div>
 
-						<div class="row collapse">
-							<img class="img_2" src="http://wechat.100steps.net/img/footer2.png" />
+						<div class="row collapse" id="footer">
+							<img class="img_2" src="http://wechat.100steps.net/img/footer3.png" />
 						</div>
 					</form>
 				</div>

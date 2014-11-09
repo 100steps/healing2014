@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+
+	<style type="text/css">
+	
+		#left{
+			width:60px;
+			height:60px;
+			border:solid black 2px;
+			float:left;
+		}
+		
+				
+		#body{
+			position:relative;
+			width:280px;
+			height:800px;
+			margin-left:70px;
+		}
+
+
+		#container{
+			width:280px;
+			height:400px;
+			background-color:#9CC;
+			display:none;
+			border:solid black 2px;
+			
+		}
+		
+		.people{
+			width:260px;
+			height:80px;
+			margin-left:10px;
+		}
+		
+	    .relative{
+			position:absolute;
+			width:45px;
+			height:45px;
+			border:solid black 2px;
+			
+			background-color:#FFF;
+
+		}
+		
+		.relative2{
+			position:relative;
+			
+			width:200px;
+			height:50px;
+			border:solid black 2px;
+			margin-left:60px;
+			background-color:#FFF;
+		
+		}
+		
+			
+	</style>
+    
+    
+    <script type="text/javascript">
+	
+
+	var state = false;
+
+	function showContain(){
+		document.getElementById("container").style.display = state ? "none" : "block"; 
+		state = !state;
+}
+	</script>
+    
+</head>
+
+<body>
+
+
+<div  id="left"></div>
+<div  id="body">
+	<span>用户名</span>
+	<div style="width:280px;height:120px;border:solid black 2px;"></div>
+
+	<span>今天 11:05</span>
+    <span style="float:right;"> 赞 | 转发 | <a href="###"  onclick="showContain()">评论</a></span>
+
+	<div  id="container">  	
+    	<div  style="width:260px;height:50px;border:solid black 2px;margin:10px; background-color:#FFF;"></div>
+ 
+ 		<span><input type="checkbox" /></span>
+        <span>同时转发</span>
+        <span style="float:right;margin-right:10px;">评论</span>
+		
+		<div class="people">
+	    	<div class="relative"></div>
+        	<div class="relative2"></div>
+            <span style="float:right;">赞 | 回复</span>
+        </div>
+    	
+        <div class="people">
+	    	<div class="relative"></div>
+        	<div class="relative2"></div>
+            <span style="float:right;">赞 | 回复</span>
+        </div>
+        
+        <div class="people">
+	    	<div class="relative"></div>
+        	<div class="relative2"></div>
+            <span style="float:right;">赞 | 回复</span>
+        </div>
+
+	</div>
+</div>
+
+
+</body>
+</html>

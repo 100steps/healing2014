@@ -30,7 +30,7 @@ body{
 	height:auto;width:140px;
 	position:absolute;
 	left:50%;
-	top:18%;
+	top:15%;
 	margin-left:-70px;
 }
 .page-1-1 .img_2 { /*发送成功*/
@@ -47,19 +47,26 @@ body{
 	top:60%;
 	margin-left:-108px;
 }
+.page-1-1 .img_5 { /*分享到朋友圈*/
+	height:auto;width:100px;
+	position:absolute;
+	left:50%;
+	top:67%;
+	margin-left:-50px;
+}
 
-
+.page-1-1 .img_4 { /*页脚*/
+	position:absolute;
+	width:44%;
+	left:28%;
+	top:87%;
+	margin-right: 28%;
+}
 
 
 
 @media screen and (min-width:330px){
-	.page-1-1 .img_4 { /*页脚*/
-		height:auto;width:160px;
-		position:absolute;
-		left:50%;
-		top:90%;
-		margin-left:-80px;
-	}
+	
 	.page-1-2 .img_1 { /*icon*/
 		height:auto;width:40%;
 		position:absolute;
@@ -76,13 +83,7 @@ body{
 	}
 }
 @media screen and (max-width:329px){
-	.page-1-1 .img_4 { /*页脚*/
-		height:auto;width:160px;
-		position:absolute;
-		left:50%;
-		top:80%;
-		margin-left:-80px;
-	}
+	
 	.page-1-2 .img_1 { /*icon*/
 		height:auto;width:38%;
 		position:absolute;
