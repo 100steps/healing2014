@@ -4,13 +4,18 @@ class SonglistController extends BaseController {
 
 	public function showSonglist(){		
 		$song_count = DB::table('songlist')->where('song', '!=', '')->count();
-		$list_count = ceil($song_count/7);
-		return View::make('songlist')->with('list_count',$list_count);
+		$list_count = ceil($song_count/6);
+		
+		if(Session::has('userInfo')){
+			return View::make('songlist')->with('list_count',$list_count);
+		}else{
+			return Redirect::to('https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1046e0a03d48a298&redirect_uri=http%3A%2F%2Fwx.mapp.scut.edu.cn%2Fbbt%2Fauth2.php&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect');
+		}
 	}
 
 	public function showSonglist_test(){		
 		$song_count = DB::table('songlist')->where('song', '!=', '')->count();
-		$list_count = ceil($song_count/7);
+		$list_count = ceil($song_count/6);
 		return View::make('songlist_test')->with('list_count',$list_count);
 	}
 
@@ -74,7 +79,7 @@ class SonglistController extends BaseController {
 
 	public function createSonglistPNG_v2($pageId){
 		// load data
-		$songlist = $this->getSonglist( ($pageId-1)*7 , 7 );
+		$songlist = $this->getSonglist( ($pageId-1)*6 , 6 );
 
 		// config
 		$font_file            = '/webroot/healing2014/app/imgbuilder/msyh.ttc';
@@ -84,7 +89,7 @@ class SonglistController extends BaseController {
 		$font_size_school     = 14;
 		$font_size_emoji      = 28;
 		$font_angle           = 0;
-		$font_song_leftborder = 125;
+		$font_song_leftborder = 155;
 		$line_height          = 105;
 
 		//创建图片
@@ -101,7 +106,7 @@ class SonglistController extends BaseController {
 		$sex_color2        = imagecolorallocate($background, 0XFF, 0XE6, 0XEF); 
 		$sex_color3        = imagecolorallocate($background, 0XE3, 0XFF, 0XCE); 
 	
-		for ($i=0; $i<7 ; $i++) {
+		for ($i=0; $i<6 ; $i++) {
 			if(!isset($songlist[$i]))
 				break;
 
@@ -180,7 +185,7 @@ class SonglistController extends BaseController {
 
 
 	public function getSongJSON($pageId){ //pageId starts from 1
-		$songlist = $this->getSonglist(($pageId-1)*7);
+		$songlist = $this->getHeadimglist(($pageId-1)*6);
 		header('Content-type: application/json;charset=utf-8');
 		echo json_encode($songlist,JSON_UNESCAPED_UNICODE);
 		exit();
@@ -193,8 +198,14 @@ class SonglistController extends BaseController {
 		exit();
 	}
 
-	private function getSonglist( $start = 0 ,$count = 7 ){
-		return DB::table('songlist')->skip($start)->take($count)->where('song', '!=', '')->orderBy('created_at', 'desc')->get();
+	private function getSonglist( $start = 0 ,$count = 6 ){
+		return DB::table('songlist')
+			->skip($start)->take($count)->where('song', '!=', '')->orderBy('created_at', 'desc')->get();
+	}
+
+	private function getHeadimglist( $start = 0 ,$count = 6 ){
+		return DB::table('songlist')
+			->select(DB::raw('avatar'))->skip($start)->take($count)->where('song', '!=', '')->orderBy('created_at', 'desc')->get();
 	}
 
 

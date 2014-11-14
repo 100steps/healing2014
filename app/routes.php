@@ -13,12 +13,12 @@
 
 Route::get('/', function()
 {
-	// return View::make('index');
-	return;
+	return View::make('webroot_index');
 });
 
 // 授权
 Route::get('healing2014/auth/{code}', 'HealingController@auth');
+Route::get('healing2014/auth2/{code}', 'HealingController@auth2');
 // 点歌
 Route::get('healing2014', 'HealingController@index');
 Route::post('healing2014', 'HealingController@save');
@@ -32,7 +32,8 @@ Route::get('healing2014/vote' , 'VoteController@showList');
 Route::get('healing2014/22bookshop', 'HealingController@show22bookshop');
 // 社区
 Route::get('healing2014/wsq' , function(){
-	echo '<h1>活动即将开始,敬请期待~</h1>';
+	// echo '<h1>活动即将开始,敬请期待~</h1>';
+	return Redirect::to('http://m.wsq.qq.com/263552171');
 });
 
 
@@ -51,7 +52,10 @@ Route::get('healing2014/gen/songlist/{pageId}' , 'SonglistController@createSongl
 Route::get('healing2014/gen/json/{pageId}' , 'SonglistController@getSongJSON');
 Route::get('healing2014/gen/favourite' , 'SonglistController@getFavouriteSongJSON');
 
-
+//搜索
+Route::get('healing2014/gen/keyword/{keyword}' , 'SearchController@searchKeyword');
+Route::get('healing2014/gen/songlist/keyword/{keyword}/{pageId}' , 'SearchController@createSonglistPNG');
+Route::get('healing2014/gen/json/keyword/{keyword}/{pageId}' , 'SearchController@getSongJSON');
 
 
 // 歌单列表

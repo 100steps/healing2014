@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>BBT治愈系</title>
+		<title>点完歌记得分享到朋友圈哦~</title>
 		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 		<link rel="stylesheet" type="text/css" href="/css/foundation.css" />
 		<link rel="stylesheet" type="text/css" href="/css/reset.css?ver=2" />

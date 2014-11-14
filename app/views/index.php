@@ -116,12 +116,12 @@
 								<label for="school">学校</label>
 							</span>
 							<span class="columns small-8 end box-right"  style="">
-								<select name="school"  id="schoolselect" required="required" disabled>
+								<select name="school"  id="schoolselect" required="required">
 									<option value="null">请选择……</option>
 									<option value="1" selected>华南理工大学</option>
-									<option value="2">华南师范大学</option>
+									<!-- <option value="2">华南师范大学</option> -->
 									<option value="3">华南农业大学</option>
-									<option value="4">广东外语外贸大学</option>
+									<!-- <option value="4">广东外语外贸大学</option> -->
 									<option value="5">其他</option>
 								</select>
 							</span>
@@ -142,4 +142,11 @@
 	<script src="js/zepto.min.js"></script>
 	<script src="js/touch.js"></script>
 	<script src="js/index.js?rnd=<?php echo rand();?>"></script>
+
+	<script type="text/javascript">
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb6cb97dac83cba944232a510d8057c73' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+
+
 </html>
