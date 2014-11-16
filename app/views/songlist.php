@@ -22,7 +22,8 @@
 					<tr><td>
 						<span class="from">来自 : </span>
 						<span class="schoolselected school" id="school1">华工</span>
-						<span class="schoolselected school" id="school2">华农</span>
+						<span class="schoolselected school" id="school2">华师</span>
+						<span class="schoolselected school" id="school3">华农</span>
 					</td></tr>				
 				</table>
 				<span style="color:white" id="submit">搜索</span>

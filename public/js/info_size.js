@@ -15,21 +15,23 @@ $(function(){
 		"height": bg_height * 0.07,
 		"top": bg_height * 0.46,
 		"left": bg_width * 0.2,
+		"font-size": bg_width * 0.04,
 	});
 	$("#info").css({
-		"width": bg_width * 0.7,
+		"width": bg_width * 0.75,
 		"height": bg_height * 0.15,
-		"top": bg_height * 0.57,
-		"left": bg_width * 0.2
+		"top": bg_height * 0.56,
+		"left": bg_width * 0.2,
+		"font-size": bg_width * 0.026,
 	});
 	$("#back").css({
-		"width":bg_width * 0.25,
+		"height": bg_height * 0.05,
 		"top": bg_height * 0.81
 	});
 	$("#vote").css({
-		"width":bg_width * 0.25,
+		"height":bg_height * 0.05,
 		"top": bg_height * 0.81,
-		"right": "0%"
+		"right": "0%",
 	});
 	$("#song div").css({
 		"height": bg_height * 0.07

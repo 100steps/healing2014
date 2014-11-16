@@ -17,8 +17,9 @@ Route::get('/', function()
 });
 
 // 授权
-Route::get('healing2014/auth/{code}', 'HealingController@auth');
-Route::get('healing2014/auth2/{code}', 'HealingController@auth2');
+Route::get('healing2014/auth/{code}', 'HealingController@auth');   //跳转到点歌
+Route::get('healing2014/auth2/{code}', 'HealingController@auth2'); //跳转到歌单
+Route::get('healing2014/auth3/{code}', 'HealingController@auth3'); //跳转到投票
 // 点歌
 Route::get('healing2014', 'HealingController@index');
 Route::post('healing2014', 'HealingController@save');
@@ -52,7 +53,7 @@ Route::get('healing2014/gen/songlist/{pageId}' , 'SonglistController@createSongl
 Route::get('healing2014/gen/json/{pageId}' , 'SonglistController@getSongJSON');
 Route::get('healing2014/gen/favourite' , 'SonglistController@getFavouriteSongJSON');
 
-//搜索
+// 搜 索
 Route::get('healing2014/gen/keyword/{keyword}' , 'SearchController@searchKeyword');
 Route::get('healing2014/gen/songlist/keyword/{keyword}/{pageId}' , 'SearchController@createSonglistPNG');
 Route::get('healing2014/gen/json/keyword/{keyword}/{pageId}' , 'SearchController@getSongJSON');
@@ -60,5 +61,11 @@ Route::get('healing2014/gen/json/keyword/{keyword}/{pageId}' , 'SearchController
 
 // 歌单列表
 Route::get('healing2014/test/list' , 'SonglistController@showSonglist_test');
+
+// 投 票
 Route::get('healing2014/test/vote' , 'VoteController@showList_test');
-Route::get('healing2014/test/vote/detail/{id}' , 'VoteController@showDetailPage');
+Route::get('healing2014/vote/detail/{id}' , 'VoteController@showDetailPage');
+Route::get('healing2014/vote/submit/{vote_id}' , 'VoteController@submitVote');
+Route::get('healing2014/vote/success' , 'VoteController@showSuccessPage');
+Route::get('healing2014/vote/award' , 'VoteController@showAwardPage');
+Route::get('healing2014/vote/result/{pageid}' , 'VoteController@showResultPage');

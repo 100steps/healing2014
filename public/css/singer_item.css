@@ -1,0 +1,46 @@
+.item{
+	position: relative;
+	background: rgba(255,255,255,.4);
+}
+.photo{
+	position: relative;
+	float: left;
+	/* display: inline-block; */
+	margin: 1%;
+	width: 15.5%;
+}
+.info{
+	postion: relative;
+	display: inline-block;
+	width: 20%;
+	height: 100%;
+	word-break:break-all;
+	word-wrap: break-word;
+	/* background-color: yellow; */
+}
+.info div{
+	postion: relative;
+	display: table-cell;
+	vertical-align: middle;
+}
+.info .name{
+	display: block;
+	margin-left: 10%;
+	margin-bottom: 5%;
+	font-weight: 900;
+}
+.vote{
+	postion: relative;
+	display: inline-block;
+	width: 59%;
+	height: 90%;
+	margin: 1%;
+	/* background-color: pink; */
+}
+.vote .bar{
+	position: relative;
+	width: 35%;
+	height: 30%;
+	top: 35%;
+	background-color: #f1706e;
+}

@@ -119,7 +119,7 @@
 								<select name="school"  id="schoolselect" required="required">
 									<option value="null">请选择……</option>
 									<option value="1" selected>华南理工大学</option>
-									<!-- <option value="2">华南师范大学</option> -->
+									<option value="2">华南师范大学</option>
 									<option value="3">华南农业大学</option>
 									<!-- <option value="4">广东外语外贸大学</option> -->
 									<option value="5">其他</option>

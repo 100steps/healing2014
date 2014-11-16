@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>治愈人气王-xxx</title>
+	<title>选手简介-<?php echo $detail->name; ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="Content-Language" content="zh-CN" />
 	<link rel="stylesheet" rev="stylesheet" href="/css/global.css" type="text/css" />
@@ -12,39 +12,39 @@
 	<script type="text/javascript" src="/js/info_size.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			//设置已访问cookie
+			//设置已访问cookie【这部分你要不要挪到php里？】
 			var GET = $.urlGet();
-			$.cookie(GET["id"], "done", {expires: 1});
-			
-			//加载选手头像（路径由后台获取）
-			var photoSrc = "/img/photo/头像.png";
-			$("#photo").attr("src", photoSrc);
-			
-			//加载选手歌曲（路径由后台获取）
-			var musicSrc = "/record/What Are Words"		//不带扩展名
-			$("#music_ogg").attr("src", musicSrc + ".ogg");
+			$.cookie(GET["id"], "done", {expires: 20});
+						
+			//加载选手歌曲【注意判断扩展名】
+			var musicSrc = "/record/<?php echo $detail->filename; ?>"	
 			$("#music_mp3").attr("src", musicSrc + ".mp3");
+			// $("#music_ogg").attr("src", musicSrc + ".ogg");		//有些歌手没有ogg的
 			
 			//按钮事件
 			$("#play").click(function(){
 				audio = $("audio")[0];
 				audio.play();
 			});
+			$("#song").click(function(){
+				audio = $("audio")[0];
+				audio.play();
+			});
 			$("#back").click(function(){
-				location.href = "index.php";
+				location.href = "/healing2014/vote";
 			});
 			$("#vote").click(function(){
-				location.href = "";
+				location.href = "/healing2014/vote/submit/<?php echo $detail->id; ?>";		//【投票处理页面（此处暂时连到投票成功页）】
 			});
 		});
 	</script>
 	<style type="text/css">
-		div{
+		div, img{
 			position: absolute;
-			/*background-color: black;*/
+			/* background-color: black; */
 		}
-		img{
-			position: absolute;
+		div{
+			color: white;
 		}
 		#photo{
 			-moz-border-radius: 50%;		/* Gecko browsers */
@@ -55,22 +55,26 @@
 			position: relative;
 			display: table-cell;
 			vertical-align: middle;
-			height: 30px;
-			/*font-weight: bold;*/
+			/* font-weight: bold; */
 		}
 	</style>
 </head>
 <body>
 	<img src="/img/vote_bg2.png" id="bg" alt="" />
-	<img id="photo" alt="" />
+	<img id="photo" alt="" src="/img/photo/<?php echo $detail->id; ?>.png"/>	<!--后台获取头像路径-->
 	<img id="play" class="button" src="/img/play.png" alt="" />
-	<div id="song"><div>nothing gonna change my love for you<br/>你好吗</div></div>
-	<div id="info">我和你</div>
+	<div id="song"><div><?php echo $detail->song; ?></div></div>	<!--后台获取歌曲名-->
+	<div id="info">	<!--后台获取选手简介-->
+		<?php echo $detail->introduction; ?>
+		<br/>
+		参赛宣言：<?php echo $detail->declaration; ?>
+	</div>
 	<img id="back" src="/img/back.png" class="button" alt="" />
-	<img id="vote" src="/img/vote.png" class="button" alt="" />
+	<img id="vote" src="/img/vote2.png" class="button" alt="" />
 	<audio>
-		<source id="music_ogg" src="/record/喜欢你.ogg" type="audio/ogg"> 
-		<source id="music_mp3" src="/record/喜欢你.mp3" type="audio/mpeg">
+		<source id="music_mp3" type="audio/mpeg">
+		<source id="music_ogg" type="audio/ogg"> 
 	</audio>
+	
 </body>
 </html>

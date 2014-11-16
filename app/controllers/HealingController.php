@@ -74,6 +74,39 @@ class HealingController extends BaseController {
 		}
 	}
 
+	public function auth3($code){ 
+		$result = $this->get_access_token($code);
+		
+		if(!isset($result->errcode)){
+
+			$this->access_token  = $result->access_token;
+			$this->expires_in    = $result->expires_in;
+			$this->refresh_token = $result->refresh_token;
+			$this->openid        = $result->openid;
+
+			$userInfo = $this->getUserInfo();
+
+			// 改变头像的分辨率
+			$userInfo->headimgurl = substr($userInfo->headimgurl, 0 , strlen($userInfo->headimgurl)-1 ).'/96';
+
+			// 改变emoji表情编码
+			$userInfo->nickname = emoji_softbank_to_unified($userInfo->nickname);
+			$userInfo->nickname_html = emoji_unified_to_html($userInfo->nickname);
+
+			Session::put('userInfo',$userInfo);
+			
+			if($userInfo->openid == 'oTIXKt2z1AAxHMxi8MHDaYP4GkzU'){
+				return Redirect::to('http://wechat.100steps.net/healing2014/test/vote');
+			}else{
+				// echo '治愈系工地施工中~';
+				return Redirect::to('http://wechat.100steps.net/healing2014/test/vote');
+			}
+			
+		}else{
+			echo 'Invalid code!';
+		}
+	}
+
 	public function index(){
 		// if(time()<1415453400){
 		// 	header("Content-type: text/html; charset=utf-8");

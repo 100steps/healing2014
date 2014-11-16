@@ -1,5 +1,5 @@
-var bg_width;		//屏幕宽度
-var bg_height;	//屏幕高度
+var bg_width;		//页面宽度
+var bg_height;	//页面高度
 $(function(){
 	bg_width = $(window).width();
 //	alert(bg_width);

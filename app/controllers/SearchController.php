@@ -27,19 +27,21 @@ class SearchController extends BaseController {
 
 
 		$result = DB::table('songlist')
-			->where('song', '!=', '')
-			->where('song', 'like' , '%'.$keyword.'%' )
-			// ->orWhere('name', 'like' , '%'.$keyword.'%' )
-			->orWhere('tel', 'like' , '%'.$keyword.'%' );
+					->where('song', '!=', '')		
+					->where(function($query) use ($keyword){
+						$query->where('song', 'like' , '%'.$keyword.'%' )
+						// ->orWhere('name', 'like' , '%'.$keyword.'%' )
+						->orWhere('tel', 'like' , '%'.$keyword.'%' );
+					});
 			
 
 		if(Input::has('school1') && Input::get('school1')=='0' ){ //华工
 			$result = $result->where('school', '!=', '1');
 		}
-		if(Input::has('school2') && Input::get('school2')=='0'){ //华农
+		if(Input::has('school2') && Input::get('school2')=='0'){ //华师
 			$result = $result->where('school', '!=', '2');
 		}
-		if(Input::has('school3') && Input::get('school3')=='0'){ //华师
+		if(Input::has('school3') && Input::get('school3')=='0'){ //华农
 			$result = $result->where('school', '!=', '3');
 		}
 		if(Input::has('school4') && Input::get('school4')=='0'){ 
@@ -60,11 +62,25 @@ class SearchController extends BaseController {
 			->skip($start)
 			->take($count)
 			->where('song', '!=', '')
-			->where('song', 'like' , '%'.$keyword.'%' )
-			// ->orWhere('name', 'like' , '%'.$keyword.'%' )
-			->orWhere('tel', 'like' , '%'.$keyword.'%' )
+			->where(function($query) use ($keyword){
+						$query->where('song', 'like' , '%'.$keyword.'%' )
+						// ->orWhere('name', 'like' , '%'.$keyword.'%' )
+						->orWhere('tel', 'like' , '%'.$keyword.'%' );
+					})		
 			->orderBy('created_at', 'desc');
-			
+		
+		if(Input::has('school1') && Input::get('school1')=='0' ){ //华工
+			$result = $result->where('school', '!=', '1');
+		}
+		if(Input::has('school2') && Input::get('school2')=='0'){ //华师
+			$result = $result->where('school', '!=', '2');
+		}
+		if(Input::has('school3') && Input::get('school3')=='0'){ //华农
+			$result = $result->where('school', '!=', '3');
+		}
+		if(Input::has('school4') && Input::get('school4')=='0'){ 
+			$result = $result->where('school', '!=', '4');
+		}
 
 		$result = $result->get();
 		return $result;
@@ -76,19 +92,21 @@ class SearchController extends BaseController {
 			->skip($start)
 			->take($count)
 			->where('song', '!=', '')
-			->where('song', 'like' , '%'.$keyword.'%' )
-			// ->orWhere('name', 'like' , '%'.$keyword.'%' )
-			->orWhere('tel', 'like' , '%'.$keyword.'%' )
+			->where(function($query) use ($keyword){
+						$query->where('song', 'like' , '%'.$keyword.'%' )
+						// ->orWhere('name', 'like' , '%'.$keyword.'%' )
+						->orWhere('tel', 'like' , '%'.$keyword.'%' );
+					})
 			->orderBy('created_at', 'desc');
 			
 
 		if(Input::has('school1') && Input::get('school1')=='0' ){ //华工
 			$result = $result->where('school', '!=', '1');
 		}
-		if(Input::has('school2') && Input::get('school2')=='0'){ //华农
+		if(Input::has('school2') && Input::get('school2')=='0'){ //华师
 			$result = $result->where('school', '!=', '2');
 		}
-		if(Input::has('school3') && Input::get('school3')=='0'){ //华师
+		if(Input::has('school3') && Input::get('school3')=='0'){ //华农
 			$result = $result->where('school', '!=', '3');
 		}
 		if(Input::has('school4') && Input::get('school4')=='0'){ 
